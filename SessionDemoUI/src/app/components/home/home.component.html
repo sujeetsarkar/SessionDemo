@@ -1,1 +1,3 @@
-<p>home works!</p>
+<p>Home Works!</p>
+<button class="btn btn-primary mr-2" (click)="getSessionRes()">Fetch Session Data</button>
+<div *ngIf="sessionRes.length > 0">{{sessionRes}}</div>
