@@ -8,7 +8,7 @@ import { Login } from '../models/login.model';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private baseUrl = 'http://localhost:5297/Session';
+  private baseUrl = 'http://localhost:5273/api/Session';
 
   constructor(private http: HttpClient) { }
 

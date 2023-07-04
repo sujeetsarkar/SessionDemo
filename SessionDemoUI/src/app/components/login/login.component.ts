@@ -56,7 +56,9 @@ export class LoginComponent {
         .subscribe(
           (data: any) => {
             console.log(data);
-            localStorage.setItem('user', data.username);
+            if(data) {
+              localStorage.setItem('user', data.userName);
+            }
             this.router.navigate([this.returnUrl]);
           },
           (error: any) => {
