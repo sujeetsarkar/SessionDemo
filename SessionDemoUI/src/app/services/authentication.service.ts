@@ -8,12 +8,12 @@ import { Login } from '../models/login.model';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private baseUrl = 'http://localhost:5273/api/Session';
+  private baseUrl = 'http://localhost:5273/api';
 
   constructor(private http: HttpClient) { }
 
   login(credential: Login) {
-    return this.http.post(`${this.baseUrl}/authenticate`, credential, { withCredentials: true });
+    return this.http.post(`${this.baseUrl}/SessionOperation`, credential);
   }
 
   isLoggedIn(): boolean {
@@ -26,7 +26,7 @@ export class AuthenticationService {
 
   getUserData() {
     const header = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.get(`${this.baseUrl}/fetch-from-session`, { withCredentials: true, responseType: 'text'});
+    return this.http.get(`${this.baseUrl}/SessionOperation`, { withCredentials: true, responseType: 'text'});
   }
 
 }

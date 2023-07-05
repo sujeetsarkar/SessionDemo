@@ -1,3 +1,5 @@
+using SessionMiddleware;
+
 namespace SessionDemo
 {
     public class Program
@@ -40,6 +42,7 @@ namespace SessionDemo
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseMiddleware<SessionExtMiddle>();
             app.UseRouting();
             app.UseAuthorization();
             app.UseCors(myAllowSpecificOrigin);
